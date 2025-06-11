@@ -1,0 +1,30 @@
+.categoria-orcamento {
+  background: linear-gradient(120deg, #181f28 60%, #161b22 100%);
+  border-radius: 13px;
+  box-shadow: 0 2px 9px rgba(0,0,0,0.19);
+  padding: 22px 16px;
+  margin-bottom: 16px;
+  color: #fff;
+  border: 1.2px solid #22242a;
+  transition: border 0.15s;
+}
+
+.categoria-orcamento h3 {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  color: #00b4d8;
+}
+
+.input-orcamento {
+  width: 90%;
+  margin-bottom: 12px;
+  background: #11151c;
+  color: #fff;
+  border: 1.1px solid #0096c7;
+}
+
+.alerta-limite {
+  color: #ff6161;
+  font-weight: bold;
+  margin-top: 10px;
+}
