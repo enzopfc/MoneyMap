@@ -6,7 +6,7 @@ const Sidebar = () => {
   const location = useLocation();
   return (
     <div className="sidebar">
-      <img src="/vite.svg" alt="Logo MoneyMap" className="logo" />
+      <img src="/moneymap-logo.png" alt="Logo MoneyMap" className="logo" />
       <nav>
         <ul>
           <li><Link className={location.pathname === "/" ? "active" : ""} to="/">Dashboard</Link></li>

@@ -23,9 +23,12 @@
   width: 78%;
   margin: 0 11% 34px 11%;
   border-radius: 13px;
-  background: white;
-  padding: 5px;
+  background: none;      /* Remove fundo branco */
+  padding: 0;            /* Remove padding branco */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  display: block;
 }
+
 
 .sidebar ul {
   list-style: none;
