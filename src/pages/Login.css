@@ -1,0 +1,155 @@
+/* Fundo de gradiente escuro com leve brilho */
+.login-bg-bling {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #003b4a 0%, #011826 90%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-glass-card {
+  background: rgba(15, 26, 38, 0.85);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.46), 0 0 0 1.5px #00b4d8;
+  border-radius: 20px;
+  padding: 48px 38px 38px 38px;
+  max-width: 370px;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  backdrop-filter: blur(7px);
+  animation: showUp 0.9s cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes showUp {
+  from { opacity: 0; transform: translateY(40px) scale(0.96);}
+  to   { opacity: 1; transform: translateY(0) scale(1);}
+}
+
+.logo-login {
+  width: 62px;
+  height: 62px;
+  margin-bottom: 18px;
+  border-radius: 13px;
+  background: white;
+  box-shadow: 0 2px 12px #00b4d850;
+  object-fit: contain;
+}
+
+h2 {
+  margin-bottom: 3px;
+  font-size: 2.2rem;
+  letter-spacing: 1.2px;
+  color: #fff;
+  text-align: center;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.bling {
+  background: linear-gradient(90deg, #00fff7, #00b4d8, #ffe066 85%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 1.07rem;
+  color: #a0b7c7;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+input {
+  padding: 12px 17px;
+  border-radius: 9px;
+  border: none;
+  font-size: 1.06rem;
+  background: #102c3c;
+  color: #fff;
+  margin-bottom: 2px;
+  outline: none;
+  transition: border .22s, box-shadow .18s;
+  box-shadow: 0 2px 7px #00b4d82b;
+}
+
+input:focus {
+  border: 2px solid #00b4d8;
+  box-shadow: 0 2px 15px #00b4d855;
+  background: #1d3c4d;
+}
+
+button[type="submit"] {
+  margin-top: 6px;
+  padding: 13px 0;
+  background: linear-gradient(90deg, #00b4d8 60%, #0096c7 100%);
+  border: none;
+  border-radius: 9px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.09rem;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 16px #00b4d840;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.13s;
+}
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #00d2ff 60%, #00bfae 100%);
+  transform: scale(1.04);
+}
+
+.login-footer {
+  margin-top: 22px;
+  color: #7ecce6;
+  font-size: 0.97rem;
+  text-align: center;
+}
+.login-footer a {
+  color: #ffe066;
+  text-decoration: underline;
+  transition: color .19s;
+}
+.login-footer a:hover {
+  color: #fffbe8;
+}
+
+/* Glow animado no fundo */
+.login-glow {
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  width: 360px;
+  height: 180px;
+  background: radial-gradient(ellipse at center, #00b4d8 0%, #011826 65%, transparent 100%);
+  opacity: 0.16;
+  filter: blur(26px);
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  animation: floatGlow 8s ease-in-out infinite alternate;
+}
+@keyframes floatGlow {
+  from { top: 60%; left: 51%;}
+  to   { top: 56%; left: 49%;}
+}
+
+/* Responsividade */
+@media (max-width: 540px) {
+  .login-glass-card {
+    padding: 33px 8px 24px 8px;
+    border-radius: 15px;
+  }
+  h2 { font-size: 1.3rem; }
+  .logo-login { width: 44px; height: 44px;}
+  .login-glow { width: 95vw; height: 180px;}
+}

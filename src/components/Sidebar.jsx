@@ -6,6 +6,14 @@ const Sidebar = () => {
   const location = useLocation();
   return (
     <div className="sidebar">
+      {/* Avatar do usuário */}
+      <div style={{
+        width: "60px", height: "60px", borderRadius: "50%", background: "#0096c7",
+        color: "#fff", fontWeight: 600, display: "flex", alignItems: "center", justifyContent: "center",
+        fontSize: 26, margin: "0 auto 28px auto"
+      }}>
+        EN
+      </div>
       <img src="/moneymap-logo.png" alt="Logo MoneyMap" className="logo" />
       <nav>
         <ul>

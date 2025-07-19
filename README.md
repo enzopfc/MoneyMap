@@ -1,12 +1,18 @@
-# React + Vite
+# MoneyMap
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistema de planejamento financeiro moderno, responsivo e com visual profissional.
 
-Currently, two official plugins are available:
+## Funcionalidades
+- Tela de login
+- Dashboard com cards e gráfico
+- Menu com avatar e logo
+- Orçamento, metas, dívidas, relatórios, calculadora e mais
+- Visual adaptado para PC e celular
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Como rodar
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+git clone https://github.com/enzopfc/MoneyMap.git
+cd MoneyMap
+npm install
+npm run dev
