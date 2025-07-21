@@ -1,35 +1,71 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import './Sidebar.css';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { FaHome, FaPiggyBank, FaGraduationCap, FaBullseye, FaWallet, FaChartPie, FaCalculator, FaCog } from "react-icons/fa";
+import "./Sidebar.css";
 
-const Sidebar = () => {
+export default function Sidebar() {
   const location = useLocation();
+  const userName = "Enzo";
+
+  // Só para mobile depois, mas já deixo pronto se quiser esconder via botão
+  // const [open, setOpen] = useState(false);
+
   return (
     <div className="sidebar">
-      {/* Avatar do usuário */}
-      <div style={{
-        width: "60px", height: "60px", borderRadius: "50%", background: "#0096c7",
-        color: "#fff", fontWeight: 600, display: "flex", alignItems: "center", justifyContent: "center",
-        fontSize: 26, margin: "0 auto 28px auto"
-      }}>
-        EN
+      <div className="sidebar-topo">
+        <img src="/moneymap-logo.png" alt="Logo" className="sidebar-logo" />
+        <div className="sidebar-title">
+          <span>MoneyMap</span>
+        </div>
       </div>
-      <img src="/moneymap-logo.png" alt="Logo MoneyMap" className="logo" />
+      <div className="sidebar-user">
+        <div className="sidebar-avatar">{userName.charAt(0)}</div>
+        <div className="sidebar-username">{userName}</div>
+      </div>
       <nav>
         <ul>
-          <li><Link className={location.pathname === "/" ? "active" : ""} to="/">Dashboard</Link></li>
-          <li><Link className={location.pathname === "/orcamento" ? "active" : ""} to="/orcamento">Orçamento</Link></li>
-          <li><Link className={location.pathname === "/educacao" ? "active" : ""} to="/educacao">Educação Financeira</Link></li>
-          <li><Link className={location.pathname === "/metas" ? "active" : ""} to="/metas">Metas</Link></li>
-          <li><Link className={location.pathname === "/dividas" ? "active" : ""} to="/dividas">Dívidas</Link></li>
-          <li><Link className={location.pathname === "/investimentos" ? "active" : ""} to="/investimentos">Investimentos</Link></li>
-          <li><Link className={location.pathname === "/relatorios" ? "active" : ""} to="/relatorios">Relatórios</Link></li>
-          <li><Link className={location.pathname === "/calculadora" ? "active" : ""} to="/calculadora">Calculadora</Link></li>
-          <li><Link className={location.pathname === "/configuracoes" ? "active" : ""} to="/configuracoes">Configurações</Link></li>
+          <li>
+            <Link to="/" className={location.pathname === "/" ? "active" : ""}>
+              <FaHome /> <span className="sidebar-text">Dashboard</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/orcamento" className={location.pathname === "/orcamento" ? "active" : ""}>
+              <FaPiggyBank /> <span className="sidebar-text">Orçamento</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/educacao" className={location.pathname === "/educacao" ? "active" : ""}>
+              <FaGraduationCap /> <span className="sidebar-text">Educação</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/metas" className={location.pathname === "/metas" ? "active" : ""}>
+              <FaBullseye /> <span className="sidebar-text">Metas</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/dividas" className={location.pathname === "/dividas" ? "active" : ""}>
+              <FaWallet /> <span className="sidebar-text">Dívidas</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/investimentos" className={location.pathname === "/investimentos" ? "active" : ""}>
+              <FaChartPie /> <span className="sidebar-text">Investimentos</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/calculadora" className={location.pathname === "/calculadora" ? "active" : ""}>
+              <FaCalculator /> <span className="sidebar-text">Calculadora</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/configuracoes" className={location.pathname === "/configuracoes" ? "active" : ""}>
+              <FaCog /> <span className="sidebar-text">Configurações</span>
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>
   );
-};
-
-export default Sidebar;
+}

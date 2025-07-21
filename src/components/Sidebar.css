@@ -1,61 +1,134 @@
 .sidebar {
-  width: 235px;
+  width: 62px;
   height: 100vh;
-  background: linear-gradient(160deg, #004466 60%, #001c2f 100%);
-  color: white;
-  padding: 24px 0 18px 0;
-  position: fixed;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  box-shadow: 2px 0 16px rgba(0,0,0,0.48);
-  z-index: 12;
-}
-
-.sidebar::-webkit-scrollbar {
-  width: 5px;
-}
-.sidebar::-webkit-scrollbar-thumb {
-  background-color: #0077b6;
-  border-radius: 5px;
-}
-
-.logo {
-  width: 78%;
-  margin: 0 11% 34px 11%;
-  border-radius: 13px;
-  background: none;      /* Remove fundo branco */
-  padding: 0;            /* Remove padding branco */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  display: block;
-}
-
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar li {
-  margin-bottom: 6px;
-}
-
-.sidebar a {
+  background: linear-gradient(135deg, #082338 80%, #00b4d8 120%);
   color: #e6edf3;
-  text-decoration: none;
-  font-size: 16px;
-  display: block;
-  padding: 13px 28px;
-  border-radius: 8px;
-  transition: background 0.18s, color 0.2s, font-weight 0.15s;
-  font-weight: 500;
-  letter-spacing: 0.3px;
+  padding: 28px 0 20px 0;
+  position: fixed;
+  left: 0; top: 0;
+  box-shadow: 3px 0 18px #001f2e48;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  border-right: 1.5px solid #22394a40;
+  transition: width 0.28s cubic-bezier(.55,0,.18,1);
+  overflow-x: hidden;
 }
 
-.sidebar a.active,
-.sidebar a:hover {
-  background: linear-gradient(90deg, #00b4d8 40%, #0096c7 100%);
-  color: #fff;
+.sidebar:hover,
+.sidebar:focus-within {
+  width: 220px;
+  box-shadow: 6px 0 28px #00eaff22;
+}
+
+.sidebar-topo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 22px;
+  transition: all 0.25s;
+}
+.sidebar-logo {
+  width: 44px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  box-shadow: 0 2px 12px #00eaff55;
+  background: #fff;
+  transition: width 0.22s;
+}
+.sidebar-title {
+  font-size: 0;
+  color: #00eaff;
+  font-weight: 800;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: font-size 0.2s, opacity 0.2s;
+}
+.sidebar:hover .sidebar-title {
+  font-size: 22px;
+  opacity: 1;
+  margin-top: 2px;
+  text-shadow: 0 1px 12px #00eaff35;
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 12px 25px 12px;
+  padding: 8px 0;
+  border-bottom: 1.5px solid #22394a30;
+  justify-content: center;
+  transition: all 0.18s;
+}
+.sidebar-avatar {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, #00eaff 60%, #003b5a 100%);
+  color: #001e33;
+  font-weight: 800;
+  border-radius: 50%;
+  font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 7px #00eaff33;
+}
+.sidebar-username {
+  font-size: 0;
+  opacity: 0;
   font-weight: 600;
-  box-shadow: 1px 2px 10px rgba(0,180,216,0.12);
+  color: #e6edf3;
+  transition: font-size 0.18s, opacity 0.18s;
+}
+.sidebar:hover .sidebar-username {
+  font-size: 15.5px;
+  opacity: 1;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.sidebar nav li {
+  margin: 0 0 3px 0;
+}
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #c2e9fa;
+  font-size: 19px;
+  padding: 13px 10px 13px 17px;
+  border-radius: 8px 0 0 8px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  transition: background 0.14s, color 0.17s, font-weight 0.12s, padding 0.18s;
+  position: relative;
+  min-width: 0;
+}
+.sidebar nav a .sidebar-text {
+  opacity: 0;
+  font-size: 0;
+  transition: opacity 0.15s, font-size 0.13s;
+  white-space: nowrap;
+}
+.sidebar:hover nav a .sidebar-text {
+  opacity: 1;
+  font-size: 16px;
+}
+
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  background: linear-gradient(90deg, #00eaff 40%, #0096c7 100%);
+  color: #042338;
+  font-weight: 700;
+  box-shadow: 1px 2px 12px #00b4d833;
+}
+.sidebar nav a.active:before,
+.sidebar nav a:hover:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 5px;
+  border-radius: 8px;
+  background: #ffe600;
+  box-shadow: 0 0 9px #ffe600b0;
 }
