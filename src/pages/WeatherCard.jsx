@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaCloudSun, FaCloudRain, FaSun, FaCloud, FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import "./WeatherCard.css";
+import "./Dashboard.css";
 
 const API_KEY = "8172ba1121c4e245acc61c46a6128484"; // Sua key
 
