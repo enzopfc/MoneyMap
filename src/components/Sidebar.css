@@ -1,7 +1,7 @@
 .sidebar {
   width: 62px;
   height: 100vh;
-  background: linear-gradient(135deg, #082338 80%, #00b4d8 120%);
+  background: linear-gradient(135deg, #06182e 80%, #00b4d8 120%);
   color: #e6edf3;
   padding: 28px 0 20px 0;
   position: fixed;
@@ -11,14 +11,16 @@
   flex-direction: column;
   z-index: 10;
   border-right: 1.5px solid #22394a40;
-  transition: width 0.28s cubic-bezier(.55,0,.18,1);
+  transition: width 0.28s cubic-bezier(.55,0,.18,1), backdrop-filter 0.3s;
   overflow-x: hidden;
+  backdrop-filter: blur(9px) saturate(1.5);
+  background-color: rgba(13, 21, 38, 0.66);
 }
-
 .sidebar:hover,
 .sidebar:focus-within {
   width: 220px;
-  box-shadow: 6px 0 28px #00eaff22;
+  box-shadow: 7px 0 28px #00eaff30;
+  backdrop-filter: blur(15px) saturate(1.85);
 }
 
 .sidebar-topo {
@@ -50,7 +52,6 @@
   margin-top: 2px;
   text-shadow: 0 1px 12px #00eaff35;
 }
-
 .sidebar-user {
   display: flex;
   align-items: center;
@@ -100,7 +101,7 @@
   border-radius: 8px 0 0 8px;
   font-weight: 500;
   letter-spacing: 0.2px;
-  transition: background 0.14s, color 0.17s, font-weight 0.12s, padding 0.18s;
+  transition: background 0.14s, color 0.17s, font-weight 0.12s, padding 0.18s, transform 0.15s;
   position: relative;
   min-width: 0;
 }
@@ -110,9 +111,41 @@
   transition: opacity 0.15s, font-size 0.13s;
   white-space: nowrap;
 }
+
+/* Quando sidebar expandida: texto aparece normal */
 .sidebar:hover nav a .sidebar-text {
   opacity: 1;
   font-size: 16px;
+  position: static;
+  left: unset;
+  background: unset;
+  color: inherit;
+  box-shadow: none;
+  padding: 0;
+  pointer-events: all;
+  transform: none;
+  z-index: unset;
+}
+
+/* Quando sidebar fechada: tooltip flutuante */
+.sidebar:not(:hover) nav a .sidebar-text {
+  position: absolute;
+  left: 60px;
+  background: rgba(13, 32, 50, 0.96);
+  color: #fff;
+  padding: 8px 17px;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px #00eaff55;
+  font-size: 15px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%);
+  top: 50%;
+  z-index: 99;
+  transition: opacity 0.22s;
+}
+.sidebar:not(:hover) nav a:hover .sidebar-text {
+  opacity: 1;
 }
 
 .sidebar nav a.active,
@@ -121,6 +154,7 @@
   color: #042338;
   font-weight: 700;
   box-shadow: 1px 2px 12px #00b4d833;
+  transform: scale(1.06);
 }
 .sidebar nav a.active:before,
 .sidebar nav a:hover:before {
