@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import "./Dashboard.css";
 import "./WeatherCard.css";
-
+import CategoriaOrcamento from "../components/CategoriaOrcamento";
 
 // --- COMPONENTE PREVISÃO DO TEMPO ----------------------
 const CITY = "Engenheiro Coelho";
@@ -71,6 +71,7 @@ function WeatherCard() {
       <div className="temp-atual">{Math.round(main.temp)}<span className="grau">°C</span></div>
       <div className="desc">{clima.description.charAt(0).toUpperCase() + clima.description.slice(1)}</div>
       <div className="sensacao">Sensação: {Math.round(main.feels_like)}°C</div>
+      
     </div>
   );
 }

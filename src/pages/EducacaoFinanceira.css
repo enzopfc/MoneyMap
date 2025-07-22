@@ -1,0 +1,187 @@
+.educacao-financeira-bg {
+  margin-left: 62px;
+  padding: 40px 30px 30px 30px;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #1b2230 70%, #0e2032 100%);
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  color: #e6edf3;
+}
+.edu-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+.edu-header-icon {
+  font-size: 2.4rem;
+  color: #ffe066;
+  filter: drop-shadow(0 1px 8px #ffe06685);
+}
+.edu-header h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 0;
+  color: #fff;
+  letter-spacing: 1.1px;
+}
+.edu-highlight {
+  color: #00eaff;
+  text-shadow: 0 1px 10px #00eaff40;
+}
+.edu-premium-badge {
+  background: linear-gradient(90deg, #ffe066 20%, #fff700 100%);
+  color: #234;
+  border-radius: 15px;
+  font-weight: 700;
+  padding: 5px 16px;
+  margin-left: 22px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 14px #ffe06633;
+}
+
+.edu-row {
+  display: flex;
+  gap: 36px;
+  margin-bottom: 34px;
+}
+.edu-card {
+  background: rgba(14, 28, 36, 0.96);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px #00eaff22, 0 1.5px 8px #ffe06611;
+  padding: 30px 25px 27px 25px;
+  flex: 1;
+  min-width: 320px;
+  color: #fff;
+  border: 1.5px solid #1c3244;
+  position: relative;
+  transition: box-shadow .2s, border .2s;
+}
+.edu-card.glass {
+  backdrop-filter: blur(5px);
+  background: linear-gradient(130deg, #141b28 70%, #1b2836 100%);
+}
+.edu-card-title {
+  font-size: 1.19rem;
+  font-weight: 700;
+  color: #00eaff;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.edu-list {
+  font-size: 1.07rem;
+  padding-left: 19px;
+  line-height: 1.7;
+  color: #e6edf3;
+}
+.edu-list li {
+  margin-bottom: 7px;
+}
+.edu-videos {
+  display: flex;
+  gap: 18px;
+  margin-top: 5px;
+}
+.edu-videos iframe {
+  border-radius: 13px;
+  border: 1.5px solid #00eaff45;
+  box-shadow: 0 2px 11px #00eaff18;
+  width: 330px;
+  height: 185px;
+}
+
+.edu-score-bloco {
+  margin: 20px 0 14px 0;
+}
+.edu-score-bar {
+  background: linear-gradient(90deg, #ff6161 10%, #ffe066 61%, #00ffb4 100%);
+  height: 14px;
+  border-radius: 11px;
+  position: relative;
+  width: 99%;
+  margin-bottom: 9px;
+  overflow: hidden;
+  box-shadow: 0 1.5px 11px #00eaff23;
+}
+.edu-score-bar-inner {
+  background: #00ffe0cc;
+  height: 14px;
+  border-radius: 11px;
+  animation: barraScore 2.5s cubic-bezier(.67,0,.15,1) 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+@keyframes barraScore {
+  from { width: 0;}
+  to   { width: 780px;}
+}
+.edu-score-mark {
+  position: absolute;
+  top: -22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffe066;
+  font-weight: bold;
+  font-size: 1.18rem;
+  left: 61%;
+  z-index: 3;
+}
+.edu-score-value {
+  background: #181f2b;
+  border-radius: 7px;
+  padding: 3px 11px;
+  font-size: 1.08rem;
+  color: #00eaff;
+  margin-bottom: 2px;
+  box-shadow: 0 1px 8px #00eaff28;
+}
+.edu-score-legenda {
+  font-size: 0.99rem;
+  color: #b0b8be;
+  margin-bottom: 9px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.edu-score-legenda span {
+  margin-left: 9px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.edu-text {
+  font-size: 1.07rem;
+  color: #e6edf3;
+  margin: 6px 0 0 0;
+}
+
+.edu-dica-bloco {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  align-items: flex-start;
+}
+.edu-dica-badge {
+  background: linear-gradient(90deg, #00eaff 40%, #ffe066 100%);
+  color: #234;
+  border-radius: 13px;
+  font-weight: 700;
+  padding: 4px 15px;
+  font-size: 1rem;
+  margin-bottom: 2px;
+  box-shadow: 0 2px 7px #00eaff44;
+}
+.edu-dica-bloco p {
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .edu-row { flex-direction: column; }
+  .edu-videos { flex-direction: column; }
+}
