@@ -1,10 +1,23 @@
-body {
+/* Tailwind base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Garante altura total da aplicação */
+html, body, #root {
+  height: 100%;
   margin: 0;
+  padding: 0;
+}
+
+/* Estilo base do body */
+body {
   font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-  background: #0d1117;
+  background: transparent !important; /* deixa o fundo da página transparente para permitir gradientes no componente */
   color: #e6edf3;
 }
 
+/* Cabeçalhos */
 h1, h2, h3, h4 {
   font-weight: 700;
   color: #ffffff;
@@ -12,12 +25,14 @@ h1, h2, h3, h4 {
   margin-top: 0;
 }
 
+/* Links */
 a {
   color: inherit;
   text-decoration: none;
   transition: color 0.2s;
 }
 
+/* Inputs, botões e selects */
 input, button, select {
   font-family: inherit;
   font-size: 1rem;
@@ -34,6 +49,7 @@ input:focus, select:focus {
   outline: 2px solid #00b4d8;
 }
 
+/* Botões */
 button {
   background: linear-gradient(90deg, #00b4d8 60%, #0096c7 100%);
   color: #fff;
@@ -50,6 +66,7 @@ button:hover {
   box-shadow: 0 4px 14px rgba(0,180,216,0.20);
 }
 
+/* Listas */
 ul {
   padding-left: 18px;
 }

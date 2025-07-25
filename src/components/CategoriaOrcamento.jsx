@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { FaWallet, FaExclamationTriangle } from "react-icons/fa";
-import './CategoriaOrcamento.css';
 
 const CategoriaOrcamento = ({ nome }) => {
   const [valor, setValor] = useState('');
   const [limite, setLimite] = useState('');
   const [alerta, setAlerta] = useState(false);
 
-  // Porcentagem atingida para a barra de progresso
   const calcPorcentagem = () => {
     if (!limite || Number(limite) === 0) return 0;
     return Math.min(100, ((Number(valor) / Number(limite)) * 100).toFixed(0));
@@ -26,72 +24,49 @@ const CategoriaOrcamento = ({ nome }) => {
   };
 
   return (
-    <div className="categoria-orcamento-glass">
-      <div className="orcamento-header">
-        <FaWallet className="orcamento-icone" />
-        <h3>{nome}</h3>
+    <div className="relative text-[#e7fcff] mb-7 min-w-[260px] max-w-[370px] px-[25px] pt-8 pb-6 rounded-[20px] border border-[#0096c74d] shadow-[0_6px_36px_#00eaff1a,0_1.5px_12px_#001f2e11] bg-[rgba(21,30,39,0.90)] backdrop-blur-[7px] transition-shadow duration-200 animate-fadeIn">
+      <div className="flex items-center gap-2 mb-4">
+        <FaWallet className="text-[#00eaff]" />
+        <h2 className="text-lg font-semibold">{nome}</h2>
       </div>
-      <div className="orcamento-inputs">
-        <label>
-          <span>Gasto atual (R$):</span>
+
+      <div className="space-y-3">
+        <div>
+          <label className="block text-sm mb-1">Valor gasto:</label>
           <input
             type="number"
-            min="0"
             value={valor}
             onChange={handleValorChange}
-            className="input-orcamento"
-            placeholder="Ex: 200"
+            className="w-full px-3 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400"
           />
-        </label>
-        <label>
-          <span>Limite da categoria (R$):</span>
+        </div>
+
+        <div>
+          <label className="block text-sm mb-1">Limite:</label>
           <input
             type="number"
-            min="0"
             value={limite}
             onChange={handleLimiteChange}
-            className="input-orcamento"
-            placeholder="Ex: 400"
+            className="w-full px-3 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400"
           />
-        </label>
-      </div>
-
-      {/* Barra de progresso animada */}
-      <div className="barra-progresso-premium">
-        <div
-          className={
-            alerta
-              ? "progresso-barra alerta-premium"
-              : "progresso-barra"
-          }
-          style={{
-            width: `${calcPorcentagem()}%`,
-            background: alerta
-              ? "linear-gradient(90deg,#ff6161 60%,#ffb56b 100%)"
-              : "linear-gradient(90deg,#00fff7 60%,#00b4d8 100%)",
-          }}
-        />
-      </div>
-      <div className="barra-info">
-        <span>{calcPorcentagem()}% do limite usado</span>
-        <span>
-          R$ {valor || 0} / R$ {limite || 0}
-        </span>
-      </div>
-
-      {alerta && (
-        <div className="alerta-limite-premium">
-          <FaExclamationTriangle />
-          <span>Você ultrapassou o limite dessa categoria!</span>
         </div>
-      )}
+
+        <div className="h-4 bg-gray-700 rounded-full overflow-hidden">
+          <div
+            className={`h-full bg-cyan-400 transition-all duration-500`}
+            style={{ width: `${calcPorcentagem()}%` }}
+          />
+        </div>
+
+        {alerta && (
+          <div className="flex items-center text-red-500 text-sm mt-2">
+            <FaExclamationTriangle className="mr-1" />
+            Você ultrapassou o limite!
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
 export default CategoriaOrcamento;
-<div className="cards-categorias">
-  <CategoriaOrcamento nome="Alimentação" />
-  <CategoriaOrcamento nome="Lazer" />
-  <CategoriaOrcamento nome="Transporte" />
-</div>
